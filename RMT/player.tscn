@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1_levbm"]
 [ext_resource type="PackedScene" uid="uid://dnyavkp8tln6q" path="res://Pistol.blend" id="2_alwoh"]
-[ext_resource type="Texture2D" uid="uid://e5x3hyw5nsjx" path="res://addons/kenney_particle_pack/star_06.png" id="3_fbd76"]
+[ext_resource type="Texture2D" uid="uid://cg21xt2w3b6nb" path="res://addons/kenney_particle_pack/star_06.png" id="3_fbd76"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_aii22"]
 
@@ -177,7 +177,7 @@ shape = SubResource("CapsuleShape3D_cyhh4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46264, -0.0956438)
 
 [node name="Pistol" parent="Camera3D" instance=ExtResource("2_alwoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.538508, -0.303794, -0.318763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.25, -0.5)
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="Camera3D/Pistol"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00040561, 0.0581332, -0.359714)
