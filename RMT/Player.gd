@@ -9,6 +9,7 @@ signal health_changed(health_value)
 
 var health = 3
 var user = Global.email.substr(0,6)
+var playerNumber = Global.playerNumber
 
 const SPEED = 8.0
 const JUMP_VELOCITY = 10.0
@@ -24,7 +25,21 @@ func _ready():
 	if not is_multiplayer_authority(): return
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera.current = true
+	var rng = RandomNumberGenerator.new()
+	randomize()
 	
+	var coordinates = [Vector3(10, 1, 20), Vector3(-10, 1, -20), Vector3(-10, 1, 20),Vector3(10, 1, -20)]
+	
+	rng.randomize()
+	var random1 = rng.randi_range(0, 3)
+	var x_range = coordinates[random1]
+	rng.randomize()
+	var random2 = rng.randi_range(0, 3)
+	var z_range = coordinates[random2]
+	var random_x = randi() % int(x_range[2]- x_range[0]) + 1 + x_range[0] 
+	var random_z =  randi() % int(z_range[2]-z_range[0]) + 1 + z_range[0]
+	var random_pos = Vector3(random_x, 30, random_z)
+	position=random_pos
 	
 func _unhandled_input(event):
 	if not is_multiplayer_authority(): return
@@ -92,4 +107,3 @@ func _on_animation_player_animation_finished(anim_name):
 		
 func set_player_name():
 	$Sprite3D/SubViewport/Label.text = user
-
